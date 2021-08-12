@@ -6,8 +6,25 @@ var book_controller = require('../controllers/bookController');
 var author_controller = require('../controllers/authorController');
 var genre_controller = require('../controllers/genreController');
 var book_instance_controller = require('../controllers/bookinstanceController');
+var publisher_controller = require('../controllers/publisherController')
 
 /// BOOK ROUTES ///
+
+//FINAL EXAM CODE HERE
+
+// GET request to create a new publisher
+
+router.get('/publisher/create', publisher_controller.publisher_create_get)
+
+// Post request to create a new publisher
+router.post('/publisher/create', publisher_controller.publisher_create_post)
+
+router.get('/publisher', publisher_controller.publisher_list);
+
+
+router.get('/author/:id', author_controller.author_detail);
+
+/// /?????????/ ///
 
 // GET catalog home page.
 router.get('/', book_controller.index);
